@@ -26,7 +26,7 @@ app.post('/submit-form', (req, res) => {
     // Append to a log file (you can modify the path as needed)
     fs.appendFile(path.join(__dirname, 'form-log.txt'), JSON.stringify(requestData) + '\n', (err) => {
         if (err) throw err;
-        console.log('Form data logged successfully');
+        console.log(`Form data logged successfully: ${JSON.stringify(requestData, null, 2)}`);
     });
 
     // Respond with a success message
